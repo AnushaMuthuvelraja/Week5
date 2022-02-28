@@ -1,3 +1,5 @@
+
+//Baseparameter
 package Homework.week5;
 
 import java.time.Duration;
@@ -38,3 +40,63 @@ public class Baseparameter
 	}
 	
 }
+-------------------------------------------------
+//CreateLeadParameter
+	
+package Homework.week5;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class CreateLeadParameters extends Baseparameter {
+
+	@Test
+	
+	public void createLeadParameter()
+	
+	{
+		driver.findElement(By.linkText("CRM/SFA")).click();
+		driver.findElement(By.linkText("Leads")).click();
+		driver.findElement(By.linkText("Create Lead")).click();
+		driver.findElement(By.id("createLeadForm_companyName")).sendKeys("HP");
+		driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Anu");
+		driver.findElement(By.id("createLeadForm_lastName")).sendKeys("Muthu");
+		driver.findElement(By.name("submitButton")).click();
+	
+		
+	}
+ 
+}
+-----------------------------------------
+	//parametertestng.xml
+	
+	<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="5">
+
+
+<parameter name="url" value="http://leaftaps.com/opentaps/"></parameter>
+<parameter name="username" value="DemoSalesManager"></parameter>
+<parameter name="password" value="crmsfa"></parameter>
+
+  <test  thread-count="5" name="Test">
+  
+  <classes>
+ 
+  <class name="Homework.week5.CreateLeadParameters"/>
+  
+  </classes>
+  </test >
+ 
+</suite> <!-- Suite -->
+
+
+
+ 
+	
+
+	
+	
