@@ -141,7 +141,20 @@ public class DuplicateLead extends BaseClass
 	      
 //Parallel Execution
 	      
-	      
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test" parallel="classes">
+    <classes>
+     <class name="Homework.week5.CreateLead"/>
+     <class name="Homework.week5.EditLead"/>
+     <class name="Homework.week5.DuplicateLead"/>
+      <class name="Homework.week5.DeleteLead"/>
+     
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+-----------------------------------------------------------------------------------	      
 
 
 
